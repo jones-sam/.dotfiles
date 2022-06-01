@@ -29,9 +29,12 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 set title
-set cmdheight=2
+" set cmdheight=2
 set mouse=a
 set lazyredraw " Faster macros
+set noshowmode
+set splitbelow
+set splitright
 
 set nobackup
 set nowritebackup

@@ -30,6 +30,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-tailwindcss3', {'do': 'yarn install --frozen-lockfile'}
 Plug 'sbdchd/neoformat'
 
+" Theme
 Plug 'gruvbox-community/gruvbox'
 
 " Git
@@ -47,6 +48,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'mbbill/undotree'
 Plug 'ap/vim-css-color'
 Plug 'vuciv/vim-bujo'
+Plug 'aserowy/tmux.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
