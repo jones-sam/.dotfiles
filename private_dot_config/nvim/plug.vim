@@ -59,7 +59,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'jiangmiao/auto-pairs'
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
 "Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
