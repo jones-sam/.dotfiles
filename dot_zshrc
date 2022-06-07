@@ -118,6 +118,8 @@ alias c="cd ~/Documents/code"
 alias v="nvim"
 alias vim="nvim"
 alias lg="lazygit"
+alias ZZ="exit"
+alias ZQ="exit"
 
 export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
@@ -145,6 +147,9 @@ fh() {
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="$PATH:/Users/sam/Documents/code/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # tabtab source for packages
 # uninstall by removing these lines
