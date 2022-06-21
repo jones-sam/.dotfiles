@@ -23,8 +23,12 @@ require('nvim-treesitter.configs').setup {
     "css",
     "json",
     "yaml",
-    "swift",
-    "html"
+    "html",
+    "rust",
+    "dart",
+    "graphql",
+    "bash",
+    "dockerfile",
   },
   rainbow = {
     enable = true,

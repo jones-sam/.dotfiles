@@ -49,9 +49,11 @@ Plug 'mbbill/undotree'
 Plug 'ap/vim-css-color'
 Plug 'vuciv/vim-bujo'
 Plug 'aserowy/tmux.nvim'
+Plug 'justinmk/vim-sneak'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'p00f/nvim-ts-rainbow'
 
 " Airline
