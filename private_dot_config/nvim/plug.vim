@@ -50,6 +50,7 @@ Plug 'ap/vim-css-color'
 Plug 'vuciv/vim-bujo'
 Plug 'aserowy/tmux.nvim'
 Plug 'justinmk/vim-sneak'
+Plug 'ThePrimeagen/harpoon'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
