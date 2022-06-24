@@ -157,6 +157,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+export PATH=$(pyenv root)/shims:$PATH
+
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

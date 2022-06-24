@@ -22,9 +22,9 @@ set scrolloff=8
 set encoding=UTF-8
 set wildmode=longest,list,full
 set wildmenu
+set foldmethod=indent   
 set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
-set foldmethod=indent   
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
