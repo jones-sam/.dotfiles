@@ -29,6 +29,7 @@ require('nvim-treesitter.configs').setup {
     "graphql",
     "bash",
     "dockerfile",
+    "markdown",
   },
   rainbow = {
     enable = true,

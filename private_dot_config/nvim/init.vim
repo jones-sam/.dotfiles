@@ -54,7 +54,6 @@ set path+=**
 set wildignore+=*/node_modules/*
 set wildignore+=**/.git/*
 
-" let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
