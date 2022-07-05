@@ -11,7 +11,7 @@ xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
 " Select all
-nmap <C-a> gg<S-v>G
+" nmap <C-a> gg<S-v>G
 
 " for ctrl+s save
 nmap <c-s> :w<CR>
