@@ -16,4 +16,3 @@ nmap <C-a> gg<S-v>G
 " for ctrl+s save
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
-

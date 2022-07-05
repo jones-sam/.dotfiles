@@ -67,6 +67,7 @@ Plug 'junegunn/goyo.vim'
 "Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
