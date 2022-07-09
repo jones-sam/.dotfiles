@@ -176,3 +176,10 @@ bindkey "\e[1;3C" forward-word # ⌥→
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/sam/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# bun completions
+[ -s "/Users/sam/.bun/_bun" ] && source "/Users/sam/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/sam/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
