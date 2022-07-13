@@ -48,7 +48,16 @@ require('nvim-treesitter.configs').setup {
   },
   context_commentstring = {
     enable = true
-  } 
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<M-w>", -- maps in normal mode to init the node/scope selection
+      node_incremental = "<M-w>", -- increment to the upper named parent
+      node_decremental = "<M-C-w>", -- decrement to the previous node
+      scope_incremental = "<M-q>", -- increment to the upper scope (as defined in locals.scm)
+    },
+  },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
