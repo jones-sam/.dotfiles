@@ -41,10 +41,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'suy/vim-context-commentstring'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-speeddating'
 Plug 'psliwka/vim-smoothie'
 Plug 'mbbill/undotree'
 Plug 'ap/vim-css-color'
@@ -52,11 +50,13 @@ Plug 'vuciv/vim-bujo'
 Plug 'aserowy/tmux.nvim'
 Plug 'justinmk/vim-sneak'
 Plug 'ThePrimeagen/harpoon'
+Plug 'monaqa/dial.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Airline
 Plug 'vim-airline/vim-airline'
