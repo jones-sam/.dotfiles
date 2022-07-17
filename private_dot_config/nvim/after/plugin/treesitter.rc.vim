@@ -58,6 +58,9 @@ require('nvim-treesitter.configs').setup {
       scope_incremental = "<M-q>", -- increment to the upper scope (as defined in locals.scm)
     },
   },
+  autotag = {
+    enable = true
+  }
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

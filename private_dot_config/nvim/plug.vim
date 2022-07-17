@@ -62,6 +62,7 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'windwp/nvim-ts-autotag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
