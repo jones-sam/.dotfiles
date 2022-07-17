@@ -1,9 +1,7 @@
-if !exists('g:loaded_nvim_treesitter')
-  echom "Not loaded treesitter"
-  finish
-endif
+if not pcall(require, "nvim-treesitter") then
+  return
+end
 
-lua <<EOF
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
@@ -65,12 +63,11 @@ require('nvim-treesitter.configs').setup {
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
-EOF
 
-"Darker gruvbox colours:
+-- Darker gruvbox colours:
 
-      "#cc241d",
-      "#98971a",
-      "#d79921",
-      "#458588",
-      "#b16286",
+--       "#cc241d",
+--       "#98971a",
+--       "#d79921",
+--       "#458588",
+--       "#b16286",
