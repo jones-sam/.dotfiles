@@ -76,7 +76,7 @@
 # ############################################################### #
 
 # open terminal
-shift + alt - return : open /Applications/kitty.app
+shift + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # focus window
 alt - h : yabai -m window --focus west
