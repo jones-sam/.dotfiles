@@ -1,0 +1,148 @@
+-- require('nvim-lsp-installer').setup {}
+-- local lsp = require('lspconfig')
+-- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
+-- local on_attach = function(client, bufnr)
+--   local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+--   -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+--   -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+--   -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+--   -- vim.keymap.set('n', '<space>wl', function()
+--   --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+--   -- end, bufopts)
+--   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+--   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+--   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+--   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+--   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+--   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+--   vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", bufopts)
+--   vim.keymap.set('n', 'ge', vim.diagnostic.goto_next, bufopts)
+--   vim.keymap.set('n', 'gE', vim.diagnostic.goto_prev, bufopts)
+--   vim.keymap.set('n', '<leader>e', "<cmd>Telescope diagnostics<cr>", bufopts)
+--   vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
+-- end
+
+-- local lsp_flags = {
+--   -- This is the default in Nvim 0.7+
+--   debounce_text_changes = 150,
+-- }
+
+-- lsp['tsserver'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
+
+-- lsp['tailwindcss'].setup {
+--   cmd = { "tailwindcss-language-server", "--stdio" },
+--   filetypes = {"typescriptreact", "typescript", "javascript", "javascriptreact", "html", "css"},
+--   root_dir = lsp.util.root_pattern('tailwind.config.cjs', 'tailwind.config.js', 'tailwind.config.ts','postcss.config.cjs', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git'),
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
+
+-- lsp['gopls'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
+
+-- lsp['sumneko_lua'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = { 'vim', 'luasnip' }
+--       }
+--     }
+--   }
+-- }
+
+-- local has_words_before = function()
+--   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+--   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+-- end
+
+-- local cmp = require 'cmp'
+-- cmp.setup({
+--   snippet = {
+--     expand = function(args)
+--       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+--       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+--       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+--       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+--     end,
+--   },
+--   window = {
+--     -- completion = cmp.config.window.bordered(),
+--     -- documentation = cmp.config.window.bordered(),
+--   },
+--   mapping = cmp.mapping.preset.insert({
+--     ["<Tab>"] = cmp.mapping(function(fallback)
+--       if cmp.visible() then
+--         cmp.select_next_item()
+--       elseif luasnip.expand_or_jumpable() then
+--         luasnip.expand_or_jump()
+--       elseif has_words_before() then
+--         cmp.complete()
+--       else
+--         fallback()
+--       end
+--     end, { "i", "s" }),
+
+--     ["<S-Tab>"] = cmp.mapping(function(fallback)
+--       if cmp.visible() then
+--         cmp.select_prev_item()
+--       elseif luasnip.jumpable(-1) then
+--         luasnip.jump(-1)
+--       else
+--         fallback()
+--       end
+--     end, { "i", "s" }),
+--     ['<C-b>'] = cmp.mapping.scroll_docs(-5),
+--     ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--     ['<C-Space>'] = cmp.mapping.complete(),
+--     ['<C-e>'] = cmp.mapping.abort(),
+--     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+--   }),
+--   sources = cmp.config.sources({
+--     { name = 'nvim_lsp' },
+--     { name = 'luasnip' },
+--     { name = 'path' },
+--   }, {
+--     { name = 'buffer' },
+--   })
+-- })
+
+-- -- Set configuration for specific filetype.
+-- cmp.setup.filetype('gitcommit', {
+--   sources = cmp.config.sources({
+--     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+--   }, {
+--     { name = 'buffer' },
+--   })
+-- })
+
+-- -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline('/', {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = {
+--     { name = 'buffer' }
+--   }
+-- })
+
+-- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline(':', {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = cmp.config.sources({
+--     { name = 'path' }
+--   }, {
+--     { name = 'cmdline' }
+--   })
+-- })
