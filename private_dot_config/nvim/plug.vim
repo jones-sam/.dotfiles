@@ -64,6 +64,7 @@ Plug 'aserowy/tmux.nvim'
 Plug 'justinmk/vim-sneak'
 Plug 'ThePrimeagen/harpoon'
 Plug 'monaqa/dial.nvim'
+Plug 'tommcdo/vim-exchange'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -81,7 +82,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
 "Plug 'Yggdroot/indentLine'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'AndrewRadev/splitjoin.vim'
 
