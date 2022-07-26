@@ -1,6 +1,27 @@
 if not pcall(require, "nvim-treesitter") then
   return
 end
+-- alt+<space>, alt+p -> swap next
+-- alt+<backspace>, alt+p -> swap previous
+-- swap_previous = {
+--   ["<M-s><M-P>"] = "@parameter.inner",
+--   ["<M-s><M-F>"] = "@function.outer",
+-- },
+-- local swap_next, swap_prev = (function()
+--   local swap_objects = {
+--     p = "@parameter.inner",
+--     f = "@function.outer",
+--     e = "@element",
+--   }
+
+--   local n, p = {}, {}
+--   for key, obj in pairs(swap_objects) do
+--     n[string.format("<M-Space><M-%s>", key)] = obj
+--     p[string.format("<M-BS><M-%s>", key)] = obj
+--   end
+
+--   return n, p
+-- end)()
 
 require('nvim-treesitter.configs').setup {
   highlight = {
@@ -31,7 +52,7 @@ require('nvim-treesitter.configs').setup {
   },
   rainbow = {
     enable = true,
-    disable = { "tsx" }, -- list of languages you want to disable the plugin for
+    -- disable = { "tsx" }, -- list of languages you want to disable the plugin for
     extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     colors = {
@@ -58,7 +79,54 @@ require('nvim-treesitter.configs').setup {
   },
   autotag = {
     enable = true
-  }
+  },
+  -- textobjects = {
+  --   move = {
+  --     enable = true,
+  --     set_jumps = true,
+
+  --     goto_next_start = {
+  --       ["]p"] = "@parameter.inner",
+  --       ["]m"] = "@function.outer",
+  --       ["]]"] = "@class.outer",
+  --     },
+  --     goto_next_end = {
+  --       ["]M"] = "@function.outer",
+  --       ["]["] = "@class.outer",
+  --     },
+  --     goto_previous_start = {
+  --       ["[p"] = "@parameter.inner",
+  --       ["[m"] = "@function.outer",
+  --       ["[["] = "@class.outer",
+  --     },
+  --     goto_previous_end = {
+  --       ["[M"] = "@function.outer",
+  --       ["[]"] = "@class.outer",
+  --     },
+  --   },
+
+  --   select = {
+  --     enable = true,
+  --     keymaps = {
+  --       ["af"] = "@function.outer",
+  --       ["if"] = "@function.inner",
+
+  --       ["ac"] = "@conditional.outer",
+  --       ["ic"] = "@conditional.inner",
+
+  --       ["aa"] = "@parameter.outer",
+  --       ["ia"] = "@parameter.inner",
+
+  --       ["av"] = "@variable.outer",
+  --       ["iv"] = "@variable.inner",
+  --     },
+  --   },
+  --   swap = {
+  --     enable = true,
+  --     swap_next = swap_next,
+  --     swap_previous = swap_prev,
+  --   },
+  -- },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

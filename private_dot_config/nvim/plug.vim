@@ -51,8 +51,8 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Plug 'tpope/vim-surround'
-Plug 'kylechui/nvim-surround'
+Plug 'tpope/vim-surround'
+" Plug 'kylechui/nvim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rhubarb'
@@ -69,7 +69,7 @@ Plug 'tommcdo/vim-exchange'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-context'
+" Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -82,8 +82,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
-"Plug 'Yggdroot/indentLine'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'AndrewRadev/splitjoin.vim'
 
