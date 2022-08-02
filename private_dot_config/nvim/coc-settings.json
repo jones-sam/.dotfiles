@@ -2,6 +2,8 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": true,
+  "typescript.updateImportsOnFileMove.enable": true,
+  "javascript.updateImportsOnFileMove.enable": true,
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",

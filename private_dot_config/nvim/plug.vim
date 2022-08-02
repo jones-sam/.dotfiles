@@ -13,12 +13,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'L3MON4D3/LuaSnip'
 
-" Nerdtree
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-Plug 'mhinz/vim-startify'
+" File tree
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -66,6 +62,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'ThePrimeagen/harpoon'
 Plug 'monaqa/dial.nvim'
 Plug 'tommcdo/vim-exchange'
+Plug 'mhinz/vim-startify'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
