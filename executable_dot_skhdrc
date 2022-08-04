@@ -78,6 +78,8 @@
 # open terminal
 shift + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
+shift + alt - s : screencapture -ic
+
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
