@@ -71,6 +71,9 @@ runtime ./maps.vim
 
 " ---------------------------------------------------
 
+" adding gitsigns status to airline
+let g:airline_section_b = "%{trim(airline#util#wrap(get(b:,'gitsigns_status',''),80) . ' ' . airline#util#wrap(airline#extensions#branch#get_head(),80))}"
+
 set termguicolors
 set background=dark
 syntax enable

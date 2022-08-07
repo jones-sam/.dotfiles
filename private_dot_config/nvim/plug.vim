@@ -45,7 +45,7 @@ Plug 'gruvbox-community/gruvbox'
 " Git
 Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tpope/vim-surround'
 " Plug 'kylechui/nvim-surround'
