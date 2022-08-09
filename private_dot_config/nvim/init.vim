@@ -57,6 +57,7 @@ set wildignore+=**/.git/*
 let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
+let g:startify_skiplist = ["/private/tmp/kitty_scrollback_buffer"]
 "let g:indentLine_char = '•'
 "let g:indentLine_showFirstIndentLevel = 0
 "let g:indentLine_concealcursor = ''
