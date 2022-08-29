@@ -180,11 +180,15 @@ alt - 0 : yabai -m space --focus recent
 # shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 
 # focus monitor
-shift + alt - z  : yabai -m display --focus recent
+shift + alt - x  : yabai -m display --focus recent
+shift + alt - z  : yabai -m display --focus prev
+shift + alt - c  : yabai -m display --focus next
 # ctrl + alt - 3  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-ctrl + cmd - z  : yabai -m window --display recent && yabai -m display --focus recent
+ctrl + cmd - x  : yabai -m window --display recent && yabai -m display --focus recent
+ctrl + cmd - z  : yabai -m window --display prev && yabai -m display --focus prev
+ctrl + cmd - c  : yabai -m window --display next && yabai -m display --focus next
 
 # move floating window
 # shift + ctrl - a : yabai -m window --move rel:-20:0

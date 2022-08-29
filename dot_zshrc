@@ -90,6 +90,7 @@ plugins=(
     nvm
     gh
     golang
+    # zsh-vi-mode
     z
     )
 
