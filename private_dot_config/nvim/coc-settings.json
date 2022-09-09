@@ -4,6 +4,8 @@
   "diagnostic.checkCurrentLine": true,
   "typescript.updateImportsOnFileMove.enable": true,
   "javascript.updateImportsOnFileMove.enable": true,
+  "suggest.noselect": false,
+  "suggest.enablePreselect": false,
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",

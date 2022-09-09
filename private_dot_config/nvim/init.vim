@@ -20,7 +20,7 @@ set undofile
 set scrolloff=8
 " set colorcolumn=80
 set encoding=UTF-8
-" set wildmode=longest,list,full
+set wildmode=longest,list,full
 set wildmenu
 set foldmethod=indent   
 set clipboard=unnamedplus   " using system clipboard
