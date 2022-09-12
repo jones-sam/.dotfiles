@@ -53,5 +53,6 @@ yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Poolsuite FM$" manage=off
 yabai -m rule --add app="^Galaxy Buds Manager$" manage=off
+yabai -m rule --add app="^OpenVPN Connect$" manage=off
 
 echo "yabai configuration loaded.."
