@@ -23,7 +23,6 @@ set encoding=UTF-8
 set wildmode=longest,list,full
 set wildmenu
 set foldmethod=indent   
-set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set foldnestmax=10
 set nofoldenable
@@ -58,9 +57,6 @@ let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:startify_skiplist = ["/private/tmp/kitty_scrollback_buffer"]
-"let g:indentLine_char = '•'
-"let g:indentLine_showFirstIndentLevel = 0
-"let g:indentLine_concealcursor = ''
 
 let mapleader = " "
 

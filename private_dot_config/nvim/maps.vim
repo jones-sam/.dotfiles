@@ -7,8 +7,14 @@ com! W w
 
 " delete without yanking
 nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
+vnoremap <leader>d "_d
+
+vnoremap <leader>p "_dP
+
+" yank to system clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nmap <leader>Y "+Y
 
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
