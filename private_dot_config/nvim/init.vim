@@ -45,7 +45,7 @@ set signcolumn=yes
 set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
+" set shortmess+=c
 
 set completeopt=menu,menuone,noselect
 
@@ -83,3 +83,12 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
+
+augroup js 
+    autocmd!
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+    autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
+augroup END
+

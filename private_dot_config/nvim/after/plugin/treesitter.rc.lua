@@ -29,8 +29,8 @@ require('nvim-treesitter.configs').setup {
     disable = {},
   },
   indent = {
-    --enable = true,
-    disable = {},
+    enable = true,
+    -- disable = {"tsx", "typescript", "jsx", "javascript"},
   },
   ensure_installed = {
     "lua",
@@ -80,53 +80,56 @@ require('nvim-treesitter.configs').setup {
   autotag = {
     enable = true
   },
-  -- textobjects = {
-  --   move = {
-  --     enable = true,
-  --     set_jumps = true,
+  autopairs = {
+    enable = true
+  },
+  textobjects = {
+    -- move = {
+    --   enable = true,
+    --   set_jumps = true,
 
-  --     goto_next_start = {
-  --       ["]p"] = "@parameter.inner",
-  --       ["]m"] = "@function.outer",
-  --       ["]]"] = "@class.outer",
-  --     },
-  --     goto_next_end = {
-  --       ["]M"] = "@function.outer",
-  --       ["]["] = "@class.outer",
-  --     },
-  --     goto_previous_start = {
-  --       ["[p"] = "@parameter.inner",
-  --       ["[m"] = "@function.outer",
-  --       ["[["] = "@class.outer",
-  --     },
-  --     goto_previous_end = {
-  --       ["[M"] = "@function.outer",
-  --       ["[]"] = "@class.outer",
-  --     },
-  --   },
+    --   goto_next_start = {
+    --     ["]p"] = "@parameter.inner",
+    --     ["]m"] = "@function.outer",
+    --     ["]]"] = "@class.outer",
+    --   },
+    --   goto_next_end = {
+    --     ["]M"] = "@function.outer",
+    --     ["]["] = "@class.outer",
+    --   },
+    --   goto_previous_start = {
+    --     ["[p"] = "@parameter.inner",
+    --     ["[m"] = "@function.outer",
+    --     ["[["] = "@class.outer",
+    --   },
+    --   goto_previous_end = {
+    --     ["[M"] = "@function.outer",
+    --     ["[]"] = "@class.outer",
+    --   },
+    -- },
 
-  --   select = {
-  --     enable = true,
-  --     keymaps = {
-  --       ["af"] = "@function.outer",
-  --       ["if"] = "@function.inner",
+    select = {
+      enable = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
 
-  --       ["ac"] = "@conditional.outer",
-  --       ["ic"] = "@conditional.inner",
+        ["ac"] = "@conditional.outer",
+        ["ic"] = "@conditional.inner",
 
-  --       ["aa"] = "@parameter.outer",
-  --       ["ia"] = "@parameter.inner",
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
 
-  --       ["av"] = "@variable.outer",
-  --       ["iv"] = "@variable.inner",
-  --     },
-  --   },
-  --   swap = {
-  --     enable = true,
-  --     swap_next = swap_next,
-  --     swap_previous = swap_prev,
-  --   },
-  -- },
+        ["av"] = "@variable.outer",
+        ["iv"] = "@variable.inner",
+      },
+    },
+    -- swap = {
+    --   enable = true,
+    --   swap_next = swap_next,
+    --   swap_previous = swap_prev,
+    -- },
+  },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
