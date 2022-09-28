@@ -42,7 +42,7 @@ filetype plugin indent on
 
 set signcolumn=yes
 
-set updatetime=100
+" set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 " set shortmess+=c
@@ -53,7 +53,6 @@ set path+=**
 set wildignore+=*/node_modules/*
 set wildignore+=**/.git/*
 
-let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:startify_skiplist = ["/private/tmp/kitty_scrollback_buffer"]
@@ -67,9 +66,6 @@ runtime ./plug.vim
 runtime ./maps.vim
 
 " ---------------------------------------------------
-
-" adding gitsigns status to airline
-let g:airline_section_b = "%{trim(airline#util#wrap(get(b:,'gitsigns_status',''),80) . ' ' . airline#util#wrap(airline#extensions#branch#get_head(),80))}"
 
 set termguicolors
 set background=dark
