@@ -4,6 +4,21 @@ local lsp_fixcurrent = require("lsp_fixcurrent")
 local lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local status, saga = pcall(require, "lspsaga")
+if (not status) then return end
+
+saga.init_lsp_saga({
+  code_action_lightbulb = {
+    -- enable = false,
+    virtual_text = false
+  },
+})
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -14,10 +29,17 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<space>wl', function()
   --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   -- end, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<space>ca', "<cmd>Lspsaga code_action<CR>", bufopts)
   vim.keymap.set('n', '<space>qf', lsp_fixcurrent, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<space>f',
+    function()
+      vim.lsp.buf.format({ async = true })
+    end
+    , bufopts)
+  vim.keymap.set('n', 'K', "<cmd>Lspsaga hover_doc<CR>", bufopts)
+  vim.keymap.set('n', 'gh', "<cmd>Lspsaga lsp_finder<CR>", bufopts)
+  vim.keymap.set('n', 'gs', "<cmd>Lspsaga show_line_diagnostics<CR>", bufopts)
+  vim.keymap.set('n', 'gs', "<cmd>Lspsaga show_cursor_diagnostics<CR>", bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
@@ -25,7 +47,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, bufopts)
   vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, bufopts)
   vim.keymap.set('n', '<leader>e', "<cmd>Telescope diagnostics<cr>", bufopts)
-  vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>r', "<cmd>Lspsaga rename<CR>", bufopts)
+  vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", bufopts)
+
 end
 
 local lsp_flags = {
@@ -90,7 +114,7 @@ cmp.setup({
     end,
   },
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menu,menuone,noinsert,noselect'
   },
   window = {
     completion = cmp.config.window.bordered(),
