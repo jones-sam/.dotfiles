@@ -66,7 +66,8 @@ require('nvim-treesitter.configs').setup {
     -- termcolors = {} -- table of colour name strings
   },
   context_commentstring = {
-    enable = true
+    enable = true,
+    enable_autocmd = false,
   },
   incremental_selection = {
     enable = true,
