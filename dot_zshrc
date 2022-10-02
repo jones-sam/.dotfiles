@@ -151,6 +151,13 @@ fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
+dirsize() {
+	du -shx -- * .[a-zA-Z0-9_]* 2>/dev/null | grep -E '^ *[0-9.]*[MG]' | sort -n >/tmp/list
+	grep -E '^ *[0-9.]*M' /tmp/list
+	grep -E '^ *[0-9.]*G' /tmp/list
+	rm /tmp/list
+}
+
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="$PATH:/Users/sam/Documents/code/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
