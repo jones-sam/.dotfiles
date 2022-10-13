@@ -85,29 +85,28 @@ require('nvim-treesitter.configs').setup {
     enable = true
   },
   textobjects = {
-    -- move = {
-    --   enable = true,
-    --   set_jumps = true,
-
-    --   goto_next_start = {
-    --     ["]p"] = "@parameter.inner",
-    --     ["]m"] = "@function.outer",
-    --     ["]]"] = "@class.outer",
-    --   },
-    --   goto_next_end = {
-    --     ["]M"] = "@function.outer",
-    --     ["]["] = "@class.outer",
-    --   },
-    --   goto_previous_start = {
-    --     ["[p"] = "@parameter.inner",
-    --     ["[m"] = "@function.outer",
-    --     ["[["] = "@class.outer",
-    --   },
-    --   goto_previous_end = {
-    --     ["[M"] = "@function.outer",
-    --     ["[]"] = "@class.outer",
-    --   },
-    -- },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        ["]p"] = "@parameter.inner",
+        ["]f"] = "@function.outer",
+        -- ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]F"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[p"] = "@parameter.inner",
+        ["[f"] = "@function.outer",
+        -- ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[F"] = "@function.outer",
+        -- ["[]"] = "@class.outer",
+      },
+    },
 
     select = {
       enable = true,

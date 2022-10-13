@@ -1,5 +1,8 @@
 -- local nt_api = require("nvim-tree.api")
 
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 
 require("nvim-tree").setup {
@@ -10,7 +13,7 @@ require("nvim-tree").setup {
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
   ignore_buffer_on_setup = false,
-  open_on_setup = false,
+  open_on_setup = true,
   open_on_setup_file = false,
   open_on_tab = false,
   ignore_buf_on_tab_change = {},

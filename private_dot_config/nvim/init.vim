@@ -42,7 +42,7 @@ filetype plugin indent on
 
 set signcolumn=yes
 
-" set updatetime=100
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 " set shortmess+=c
@@ -53,8 +53,6 @@ set path+=**
 set wildignore+=*/node_modules/*
 set wildignore+=**/.git/*
 
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
 let g:startify_skiplist = ["/private/tmp/kitty_scrollback_buffer"]
 
 let mapleader = " "
@@ -73,6 +71,10 @@ syntax enable
 let g:gruvbox_italic = 1
 
 colorscheme gruvbox
+
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NormalFloat ctermbg=NONE guibg=NONE
+highlight TreesitterContext ctermbg=NONE guibg=#504945
 
 " Short highlight on yanked text
 augroup highlight_yank

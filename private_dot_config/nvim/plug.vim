@@ -33,6 +33,8 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+" TODO: setup nvim-dap
+" Plug 'mfussenegger/nvim-dap'
 
 " Formatting
 Plug 'sbdchd/neoformat'

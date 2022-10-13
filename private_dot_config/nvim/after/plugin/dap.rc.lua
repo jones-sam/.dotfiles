@@ -1,0 +1,21 @@
+-- local dap = require('dap')
+--
+-- vim.keymap.set("n", '<leader>dk', function() dap.continue() end)
+-- vim.keymap.set("n", '<leader>dl', function() dap.run_last() end)
+-- vim.keymap.set("n", '<leader>b', function() dap.toggle_breakpoint() end)
+--
+-- dap.adapters.go = {
+--   type = 'executable';
+--   command = 'node';
+--   args = { os.getenv('HOME') .. '/dev/golang/vscode-go/dist/debugAdapter.js' };
+-- }
+-- dap.configurations.go = {
+--   {
+--     type = 'go';
+--     name = 'Debug';
+--     request = 'launch';
+--     showLog = false;
+--     program = "${file}";
+--     dlvToolPath = vim.fn.exepath('dlv') -- Adjust to where delve is installed
+--   },
+-- }
