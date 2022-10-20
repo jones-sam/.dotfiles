@@ -55,5 +55,5 @@ lualine.setup {
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = { 'nvim-tree', 'fugitive', --[[ 'nvim-dap-ui'  ]]}
+    extensions = { 'nvim-tree', 'fugitive', 'nvim-dap-ui' }
 }
