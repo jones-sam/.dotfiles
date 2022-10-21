@@ -148,7 +148,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'vsnip' },
-    { name = 'cmp_tabnine', keyword_length = 5 },
+    { name = 'cmp_tabnine', keyword_length = 2 },
     { name = 'buffer', keyword_length = 5 },
   },
   formatting = {

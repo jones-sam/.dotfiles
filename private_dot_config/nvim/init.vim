@@ -83,12 +83,13 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
 
-augroup two_space_langs 
-    autocmd!
-    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-    autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
-    autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
-    autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
-    autocmd FileType lua setlocal shiftwidth=2 tabstop=2
-augroup END
-
+" replaced this with vim-sleuth, maybe add it back in the future
+" augroup two_space_langs 
+"     autocmd!
+"     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
+" augroup END
+"
