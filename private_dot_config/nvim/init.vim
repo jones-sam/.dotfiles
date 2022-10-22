@@ -68,6 +68,7 @@ runtime ./maps.vim
 set termguicolors
 set background=dark
 syntax enable
+
 let g:gruvbox_italic = 1
 
 colorscheme gruvbox
