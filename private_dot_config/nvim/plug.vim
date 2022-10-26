@@ -67,7 +67,7 @@ Plug 'NvChad/nvim-colorizer.lua'
 Plug 'aserowy/tmux.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'ThePrimeagen/harpoon'
-" Plug 'monaqa/dial.nvim'
+Plug 'monaqa/dial.nvim'
 Plug 'tommcdo/vim-exchange'
 Plug 'mhinz/vim-startify'
 
@@ -83,6 +83,7 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'nvim-treesitter/playground'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nvim-lualine/lualine.nvim'

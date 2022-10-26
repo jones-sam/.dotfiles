@@ -49,7 +49,8 @@ require('nvim-treesitter.configs').setup {
     "bash",
     "dockerfile",
     "markdown",
-    "prisma"
+    "prisma",
+    "query"
   },
   rainbow = {
     enable = true,

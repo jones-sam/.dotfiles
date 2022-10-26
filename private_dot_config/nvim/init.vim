@@ -22,11 +22,11 @@ set scrolloff=8
 set encoding=UTF-8
 set wildmode=longest,list,full
 set wildmenu
-set foldmethod=indent   
+" set foldmethod=indent   
 set cursorline              " highlight current cursorline
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
+" set foldnestmax=10
+" set nofoldenable
+" set foldlevel=2
 set title
 " set cmdheight=2
 set mouse=a
@@ -85,12 +85,11 @@ augroup highlight_yank
 augroup END
 
 " replaced this with vim-sleuth, maybe add it back in the future
-" augroup two_space_langs 
-"     autocmd!
-"     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
-" augroup END
-"
+augroup two_space_langs 
+    autocmd!
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+    autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
+    autocmd FileType lua setlocal shiftwidth=2 tabstop=2
+augroup END
