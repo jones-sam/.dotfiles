@@ -159,7 +159,7 @@ dirsize() {
 }
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="$PATH:/Users/sam/Documents/code/flutter/bin"
+# export PATH="$PATH:/Users/sam/Documents/code/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export GOPATH=$HOME/go
