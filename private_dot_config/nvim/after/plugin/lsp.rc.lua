@@ -85,6 +85,12 @@ lsp['gopls'].setup {
   flags = lsp_flags,
 }
 
+lsp['intelephense'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
 lsp['sumneko_lua'].setup {
   capabilities = capabilities,
   on_attach = on_attach,

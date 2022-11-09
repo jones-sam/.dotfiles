@@ -26,11 +26,13 @@ end
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
-    disable = {},
+    -- seems likes php is broken with treesitter
+    disable = { "php" },
   },
   indent = {
     enable = true,
-    -- disable = {"tsx", "typescript", "jsx", "javascript"},
+    -- indentation isn't great with js, especially react, using vim-polyglot
+    disable = { "tsx", "typescript", "jsx", "javascript", "php" },
   },
   ensure_installed = {
     "lua",
@@ -50,7 +52,8 @@ require('nvim-treesitter.configs').setup {
     "dockerfile",
     "markdown",
     "prisma",
-    "query"
+    "query",
+    "php"
   },
   rainbow = {
     enable = true,

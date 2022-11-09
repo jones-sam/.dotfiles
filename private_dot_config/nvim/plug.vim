@@ -46,8 +46,8 @@ Plug 'nvim-telescope/telescope-dap.nvim'
 Plug 'sbdchd/neoformat'
 
 " Theme
-Plug 'gruvbox-community/gruvbox'
-" Plug 'ellisonleao/gruvbox.nvim'
+" Plug 'gruvbox-community/gruvbox'
+Plug 'ellisonleao/gruvbox.nvim'
 
 " Git
 Plug 'kdheepak/lazygit.nvim'
@@ -72,12 +72,7 @@ Plug 'tommcdo/vim-exchange'
 Plug 'mhinz/vim-startify'
 
 " Treesitter
-
-" using specific commit because it breaks with the current version of gruvbox.
-" https://github.com/ellisonleao/gruvbox.nvim/issues/159
-" https://www.reddit.com/r/neovim/comments/y5rofg/recent_treesitter_update_borked_highlighting/
-" TODO: remove when it is fixed
-Plug 'nvim-treesitter/nvim-treesitter', { 'commit': 'addc129a4f272aba0834bd0a7b6bd4ad5d8c801b', 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'p00f/nvim-ts-rainbow'
@@ -85,6 +80,7 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/playground'
 
+Plug 'sheerun/vim-polyglot'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'windwp/nvim-autopairs'
