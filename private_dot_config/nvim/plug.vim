@@ -34,6 +34,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'simrat39/inlay-hints.nvim'
 
 " DAP
 Plug 'mfussenegger/nvim-dap'
