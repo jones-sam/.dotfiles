@@ -8,6 +8,15 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# autoload bashcompinit && bashcompinit
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sam/.oh-my-zsh"
 
@@ -91,7 +100,6 @@ plugins=(
     gh
     golang
     # zsh-vi-mode
-    z
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -191,3 +199,6 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/sam/Library/Caches/heroku/autocomplete/zsh_setup
 # Bun
 export BUN_INSTALL="/Users/sam/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Zoxide
+eval "$(zoxide init zsh)"
