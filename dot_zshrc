@@ -134,6 +134,7 @@ alias v="nvim"
 alias lg="lazygit"
 alias ZZ="exit"
 alias ZQ="exit"
+alias cpwd="pwd|pbcopy"
 
 export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
