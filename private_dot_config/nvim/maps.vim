@@ -21,3 +21,6 @@ imap <c-s> <Esc>:w<CR>
 
 nnoremap <leader>cf <CMD>lua require('cmp').setup.buffer { enabled = false }<CR>
 nnoremap <leader>ct <CMD>lua require('cmp').setup.buffer { enabled = true }<CR>
+
+nnoremap <C-d> <CMD>call smoothie#do("\<C-d>zz")<CR>
+nnoremap <C-u> <CMD>call smoothie#do("\<C-u>zz")<CR> 

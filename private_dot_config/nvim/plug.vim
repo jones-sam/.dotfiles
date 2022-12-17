@@ -35,6 +35,7 @@ Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'simrat39/inlay-hints.nvim'
+Plug 'folke/trouble.nvim'
 
 " DAP
 Plug 'mfussenegger/nvim-dap'
@@ -89,6 +90,7 @@ Plug 'junegunn/goyo.vim'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'Equilibris/nx.nvim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
