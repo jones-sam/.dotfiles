@@ -36,6 +36,7 @@ Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'simrat39/inlay-hints.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'j-hui/fidget.nvim'
 
 " DAP
 Plug 'mfussenegger/nvim-dap'
