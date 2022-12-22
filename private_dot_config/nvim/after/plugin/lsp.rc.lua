@@ -204,6 +204,12 @@ lsp['pylsp'].setup {
   flags = lsp_flags,
 }
 
+lsp['cssls'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
 local ok, lspkind = pcall(require, "lspkind")
 if not ok then
   return
