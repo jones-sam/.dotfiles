@@ -92,6 +92,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Equilibris/nx.nvim'
+Plug 'prisma/vim-prisma'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'

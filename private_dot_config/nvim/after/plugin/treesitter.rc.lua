@@ -51,6 +51,7 @@ require('nvim-treesitter.configs').setup {
     "bash",
     "dockerfile",
     "markdown",
+    "markdown_inline",
     "prisma",
     "query",
     "php"

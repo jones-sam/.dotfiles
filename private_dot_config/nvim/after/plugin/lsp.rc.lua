@@ -11,9 +11,9 @@ if (not status) then return end
 
 local ih = require("inlay-hints")
 
-saga.init_lsp_saga({
-  code_action_lightbulb = {
-    -- enable = false,
+saga.setup({
+  lightbulb = {
+    enable = true,
     virtual_text = false
   },
 })
@@ -49,12 +49,21 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", bufopts)
-  vim.keymap.set('n', ']g', vim.diagnostic.goto_next, bufopts)
-  vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, bufopts)
+  vim.keymap.set('n', "]g", function()
+    require("lspsaga.diagnostic"):goto_next()
+  end, bufopts)
+  vim.keymap.set('n', "[g", function()
+    require("lspsaga.diagnostic"):goto_prev()
+  end, bufopts)
+  vim.keymap.set('n', "]e", function()
+    require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+  end, bufopts)
+  vim.keymap.set('n', "[e", function()
+    require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+  end, bufopts)
   vim.keymap.set('n', '<leader>e', "<cmd>Telescope diagnostics<cr>", bufopts)
   vim.keymap.set('n', '<leader>r', "<cmd>Lspsaga rename<CR>", bufopts)
   vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", bufopts)
-
 end
 
 local lsp_flags = {
@@ -67,7 +76,6 @@ ih.setup({
   -- possible options are dynamic, eol, virtline and custom
   -- renderer = "inlay-hints/render/dynamic",
   renderer = "inlay-hints/render/eol",
-
   hints = {
     parameter = {
       show = true,
@@ -78,10 +86,8 @@ ih.setup({
       highlight = "Whitespace",
     },
   },
-
   -- Only show inlay hints for the current line
   only_current_line = false,
-
   eol = {
     -- whether to align to the extreme right or not
     right_align = false,
@@ -108,6 +114,7 @@ ih.setup({
 lsp['tsserver'].setup {
   capabilities = capabilities,
   on_attach = function(c, b)
+    on_attach(c, b)
     ih.on_attach(c, b)
   end,
   flags = lsp_flags,
@@ -155,6 +162,7 @@ lsp['tailwindcss'].setup {
 lsp['gopls'].setup {
   capabilities = capabilities,
   on_attach = function(c, b)
+    on_attach(c, b)
     ih.on_attach(c, b)
   end,
   flags = lsp_flags,
@@ -179,7 +187,7 @@ lsp['intelephense'].setup {
   flags = lsp_flags,
 }
 
-lsp['sumneko_lua'].setup {
+lsp['lua_ls'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -205,6 +213,18 @@ lsp['pylsp'].setup {
 }
 
 lsp['cssls'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+lsp['elixirls'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+lsp['prismals'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
@@ -249,7 +269,7 @@ cmp.setup({
         fallback()
       end
     end,
-    ['<C-b>'] = cmp.mapping.scroll_docs(-5),
+    ['<C-b>'] = cmp.mapping.scroll_docs( -5),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
@@ -263,7 +283,7 @@ cmp.setup({
     { name = 'path' },
     { name = 'vsnip' },
     { name = 'cmp_tabnine', keyword_length = 2 },
-    { name = 'buffer', keyword_length = 5 },
+    { name = 'buffer',      keyword_length = 5 },
   },
   formatting = {
     format = lspkind.cmp_format {
