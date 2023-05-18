@@ -31,12 +31,12 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'simrat39/inlay-hints.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'j-hui/fidget.nvim'
+Plug 'zbirenbaum/copilot.lua'
 
 " DAP
 Plug 'mfussenegger/nvim-dap'
@@ -73,6 +73,7 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'monaqa/dial.nvim'
 Plug 'tommcdo/vim-exchange'
 Plug 'mhinz/vim-startify'
+" Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }

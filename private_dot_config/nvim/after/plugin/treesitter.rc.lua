@@ -54,7 +54,8 @@ require('nvim-treesitter.configs').setup {
     "markdown_inline",
     "prisma",
     "query",
-    "php"
+    "php",
+    "svelte"
   },
   rainbow = {
     enable = true,

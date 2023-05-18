@@ -18,7 +18,7 @@ saga.setup({
   },
 })
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = "", Warn = "", Hint = "󰌶", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -46,6 +46,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gs', "<cmd>Lspsaga show_cursor_diagnostics<CR>", bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gv', "<cmd> vsplit | lua vim.lsp.buf.definition()<CR>", bufopts)
+  vim.keymap.set('n', 'gV', "<cmd> split | lua vim.lsp.buf.definition()<CR>", bufopts)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", bufopts)
@@ -91,17 +92,14 @@ ih.setup({
   eol = {
     -- whether to align to the extreme right or not
     right_align = false,
-
     -- padding from the right if right_align is true
     right_align_padding = 7,
-
     parameter = {
       separator = ", ",
       format = function(hints)
         return string.format(" <- (%s)", hints)
       end,
     },
-
     type = {
       separator = ", ",
       format = function(hints)
@@ -230,6 +228,13 @@ lsp['prismals'].setup {
   flags = lsp_flags,
 }
 
+lsp['svelte'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+
 local ok, lspkind = pcall(require, "lspkind")
 if not ok then
   return
@@ -269,21 +274,20 @@ cmp.setup({
         fallback()
       end
     end,
-    ['<C-b>'] = cmp.mapping.scroll_docs( -5),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-5),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
   },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'vsnip' },
-    { name = 'cmp_tabnine', keyword_length = 2 },
-    { name = 'buffer',      keyword_length = 5 },
+    { name = 'buffer',  keyword_length = 5 },
   },
   formatting = {
     format = lspkind.cmp_format {
@@ -293,7 +297,6 @@ cmp.setup({
         nvim_lsp = "[LSP]",
         path = "[path]",
         vsnip = "[snip]",
-        cmp_tabnine = "[TabNine]",
       },
     },
   },
