@@ -142,6 +142,7 @@ alias ZZ="exit"
 alias ZQ="exit"
 alias cpwd="pwd|pbcopy"
 alias ip="curl ifconfig.co"
+alias fullip="curl ifconfig.co/json | jq"
 
 export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
@@ -216,9 +217,11 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # direnv
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # Android Studio
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+export PATH="$PATH:$HOME/.local/bin"
