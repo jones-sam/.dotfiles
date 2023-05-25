@@ -98,8 +98,8 @@ colorscheme gruvbox
 
 " highlight Normal ctermbg=NONE guibg=NONE
 " highlight NormalFloat ctermbg=NONE guibg=NONE
-" " highlight SignColumn ctermbg=NONE guibg=NONE
-" highlight TreesitterContext ctermbg=NONE guibg=#504945
+" highlight SignColumn ctermbg=NONE guibg=NONE
+highlight TreesitterContext ctermbg=NONE guibg=#504945
 
 " Short highlight on yanked text
 augroup highlight_yank

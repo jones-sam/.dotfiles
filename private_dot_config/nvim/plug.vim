@@ -37,6 +37,8 @@ Plug 'simrat39/inlay-hints.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'j-hui/fidget.nvim'
 Plug 'zbirenbaum/copilot.lua'
+Plug 'ray-x/lsp_signature.nvim'
+
 
 " DAP
 Plug 'mfussenegger/nvim-dap'
