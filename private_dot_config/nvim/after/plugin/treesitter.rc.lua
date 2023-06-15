@@ -1,6 +1,9 @@
 if not pcall(require, "nvim-treesitter") then
   return
 end
+
+local rainbow = require 'ts-rainbow'
+
 -- alt+<space>, alt+p -> swap next
 -- alt+<backspace>, alt+p -> swap previous
 -- swap_previous = {
@@ -57,21 +60,15 @@ require('nvim-treesitter.configs').setup {
     "php",
     "svelte"
   },
-  rainbow = {
-    enable = true,
-    -- disable = { "tsx" }, -- list of languages you want to disable the plugin for
-    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    colors = {
-      "#fb4934",
-      "#b8bb26",
-      "#fabd2f",
-      "#83a598",
-      "#d3869b",
-    }, -- table of hex strings
-    -- https://github.com/morhetz/gruvbox-contrib/blob/master/color.table
-    -- termcolors = {} -- table of colour name strings
-  },
+  -- rainbow = {
+  --   enable = true,
+  --   -- disable = { "tsx" }, -- list of languages you want to disable the plugin for
+  --   max_file_lines = nil,  -- Do not enable for files with more than n lines, int
+  --   query = 'rainbow-parens',
+  --   strategy = {
+  --     rainbow.strategy.global,
+  --   },
+  -- },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
@@ -79,10 +76,10 @@ require('nvim-treesitter.configs').setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "<M-w>", -- maps in normal mode to init the node/scope selection
-      node_incremental = "<M-w>", -- increment to the upper named parent
+      init_selection = "<M-w>",     -- maps in normal mode to init the node/scope selection
+      node_incremental = "<M-w>",   -- increment to the upper named parent
       node_decremental = "<M-C-w>", -- decrement to the previous node
-      scope_incremental = "<M-q>", -- increment to the upper scope (as defined in locals.scm)
+      scope_incremental = "<M-q>",  -- increment to the upper scope (as defined in locals.scm)
     },
   },
   autotag = {

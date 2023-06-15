@@ -81,7 +81,9 @@ Plug 'mhinz/vim-startify'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'p00f/nvim-ts-rainbow'
+" Plug 'HiPhish/nvim-ts-rainbow2'
+lua vim.opt.runtimepath:prepend("~/Documents/code/nvim-ts-rainbow2")
+
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/playground'
