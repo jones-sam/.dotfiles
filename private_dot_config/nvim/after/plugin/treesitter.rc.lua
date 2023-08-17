@@ -2,8 +2,6 @@ if not pcall(require, "nvim-treesitter") then
   return
 end
 
-local rainbow = require 'ts-rainbow'
-
 -- alt+<space>, alt+p -> swap next
 -- alt+<backspace>, alt+p -> swap previous
 -- swap_previous = {
@@ -29,13 +27,11 @@ local rainbow = require 'ts-rainbow'
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
-    -- seems likes php is broken with treesitter
-    disable = { "php" },
   },
   indent = {
     enable = true,
     -- indentation isn't great with js, especially react, using vim-polyglot
-    disable = { "tsx", "typescript", "jsx", "javascript", "php" },
+    disable = { "tsx", "typescript", "jsx", "javascript", },
   },
   ensure_installed = {
     "lua",
@@ -60,15 +56,6 @@ require('nvim-treesitter.configs').setup {
     "php",
     "svelte"
   },
-  -- rainbow = {
-  --   enable = true,
-  --   -- disable = { "tsx" }, -- list of languages you want to disable the plugin for
-  --   max_file_lines = nil,  -- Do not enable for files with more than n lines, int
-  --   query = 'rainbow-parens',
-  --   strategy = {
-  --     rainbow.strategy.global,
-  --   },
-  -- },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
@@ -83,7 +70,8 @@ require('nvim-treesitter.configs').setup {
     },
   },
   autotag = {
-    enable = true
+    enable = true,
+    enable_close_on_slash = false,
   },
   autopairs = {
     enable = true

@@ -1,5 +1,5 @@
 require("mason").setup()
-require("fidget").setup()
+-- require("fidget").setup({})
 
 local lsp_fixcurrent = require("lsp_fixcurrent")
 
@@ -9,7 +9,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
-local ih = require("inlay-hints")
+-- local ih = require("inlay-hints")
 
 saga.setup({
   lightbulb = {
@@ -74,74 +74,74 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-ih.setup({
-  -- renderer to use
-  -- possible options are dynamic, eol, virtline and custom
-  -- renderer = "inlay-hints/render/dynamic",
-  renderer = "inlay-hints/render/eol",
-  hints = {
-    parameter = {
-      show = true,
-      highlight = "whitespace",
-    },
-    type = {
-      show = true,
-      highlight = "Whitespace",
-    },
-  },
-  -- Only show inlay hints for the current line
-  only_current_line = false,
-  eol = {
-    -- whether to align to the extreme right or not
-    right_align = false,
-    -- padding from the right if right_align is true
-    right_align_padding = 7,
-    parameter = {
-      separator = ", ",
-      format = function(hints)
-        return string.format(" <- (%s)", hints)
-      end,
-    },
-    type = {
-      separator = ", ",
-      format = function(hints)
-        return string.format(" => %s", hints)
-      end,
-    },
-  },
-})
+-- ih.setup({
+--   -- renderer to use
+--   -- possible options are dynamic, eol, virtline and custom
+--   -- renderer = "inlay-hints/render/dynamic",
+--   renderer = "inlay-hints/render/eol",
+--   hints = {
+--     parameter = {
+--       show = true,
+--       highlight = "whitespace",
+--     },
+--     type = {
+--       show = true,
+--       highlight = "Whitespace",
+--     },
+--   },
+--   -- Only show inlay hints for the current line
+--   only_current_line = false,
+--   eol = {
+--     -- whether to align to the extreme right or not
+--     right_align = false,
+--     -- padding from the right if right_align is true
+--     right_align_padding = 7,
+--     parameter = {
+--       separator = ", ",
+--       format = function(hints)
+--         return string.format(" <- (%s)", hints)
+--       end,
+--     },
+--     type = {
+--       separator = ", ",
+--       format = function(hints)
+--         return string.format(" => %s", hints)
+--       end,
+--     },
+--   },
+-- })
 
 lsp['tsserver'].setup {
   capabilities = capabilities,
   on_attach = function(c, b)
     on_attach(c, b)
-    ih.on_attach(c, b)
+    -- ih.on_attach(c, b)
   end,
   flags = lsp_flags,
-  settings = {
-    javascript = {
-      inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
-      },
-    },
-    typescript = {
-      inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
-      },
-    },
-  },
+  --   settings = {
+  --     javascript = {
+  --       inlayHints = {
+  --         includeInlayEnumMemberValueHints = true,
+  --         includeInlayFunctionLikeReturnTypeHints = true,
+  --         includeInlayFunctionParameterTypeHints = true,
+  --         includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+  --         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+  --         includeInlayPropertyDeclarationTypeHints = true,
+  --         includeInlayVariableTypeHints = true,
+  --       },
+  --     },
+  --     typescript = {
+  --       inlayHints = {
+  --         includeInlayEnumMemberValueHints = true,
+  --         includeInlayFunctionLikeReturnTypeHints = true,
+  --         includeInlayFunctionParameterTypeHints = true,
+  --         includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+  --         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+  --         includeInlayPropertyDeclarationTypeHints = true,
+  --         includeInlayVariableTypeHints = true,
+  --       },
+  --     },
+  --   },
 }
 
 lsp['eslint'].setup {
@@ -236,6 +236,30 @@ lsp['svelte'].setup {
   flags = lsp_flags,
 }
 
+lsp['ruby_ls'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+lsp['solargraph'].setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+--
+-- lsp['rubyfmt'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
+--
+-- lsp['erblint'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
+--
 
 local ok, lspkind = pcall(require, "lspkind")
 if not ok then

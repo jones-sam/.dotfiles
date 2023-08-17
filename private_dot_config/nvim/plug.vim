@@ -35,7 +35,7 @@ Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'simrat39/inlay-hints.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'j-hui/fidget.nvim'
+Plug 'j-hui/fidget.nvim', { 'tag': 'legacy' }
 Plug 'zbirenbaum/copilot.lua'
 Plug 'ray-x/lsp_signature.nvim'
 
@@ -81,9 +81,6 @@ Plug 'mhinz/vim-startify'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'HiPhish/nvim-ts-rainbow2'
-lua vim.opt.runtimepath:prepend("~/Documents/code/nvim-ts-rainbow2")
-
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/playground'
@@ -96,7 +93,6 @@ Plug 'junegunn/goyo.vim'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Equilibris/nx.nvim'
 Plug 'prisma/vim-prisma'
 
 " Icons
