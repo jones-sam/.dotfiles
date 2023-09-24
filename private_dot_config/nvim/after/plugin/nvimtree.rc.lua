@@ -114,24 +114,16 @@ require("nvim-tree").setup {
   reload_on_bufenter = false,
   respect_buf_cwd = false,
   on_attach = on_attach,
-  remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs)
   view = {
     adaptive_size = false,
     centralize_selection = false,
     width = 30,
     -- height = 30,
-    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
   },
   renderer = {
     add_trailing = false,

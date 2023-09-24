@@ -1,5 +1,5 @@
 require("mason").setup()
--- require("fidget").setup({})
+require("fidget").setup({})
 
 local lsp_fixcurrent = require("lsp_fixcurrent")
 
