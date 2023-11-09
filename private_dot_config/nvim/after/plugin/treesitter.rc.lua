@@ -31,7 +31,7 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true,
     -- indentation isn't great with js, especially react, using vim-polyglot
-    disable = { "tsx", "typescript", "jsx", "javascript", },
+    -- disable = { "tsx", "typescript", "jsx", "javascript", },
   },
   ensure_installed = {
     "lua",
@@ -55,7 +55,6 @@ require('nvim-treesitter.configs').setup {
     "query",
     "php",
     "svelte",
-    "norg"
   },
   context_commentstring = {
     enable = true,

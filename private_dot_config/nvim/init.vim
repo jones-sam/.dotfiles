@@ -21,13 +21,8 @@ set scrolloff=8
 set encoding=UTF-8
 set wildmode=longest,list,full
 set wildmenu
-" set foldmethod=indent   
 set cursorline              " highlight current cursorline
-" set foldnestmax=10
-" set nofoldenable
-" set foldlevel=2
 set title
-" set cmdheight=2
 set mouse=a
 set lazyredraw " Faster macros
 set noshowmode
@@ -45,11 +40,6 @@ set signcolumn=yes
 
 set updatetime=100
 
-" Don't pass messages to |ins-completion-menu|.
-" set shortmess+=c
-
-" set completeopt=menu,menuone,noselect
-
 set path+=**
 set wildignore+=*/node_modules/*
 set wildignore+=**/.git/*
@@ -61,40 +51,32 @@ let g:polyglot_disabled = ['norg', 'ftdetect']
 let mapleader = " "
 let maplocalleader = ","
 
-" IMPORTS
-" ---------------------------------------------------
-
-runtime ./plug.vim
 runtime ./maps.vim
-
-" ---------------------------------------------------
 
 set termguicolors
 set background=dark
 syntax enable
 
 lua << EOF
--- require("gruvbox").setup({
---   undercurl = true,
---   underline = true,
---   bold = true,
---   italic = {
---      strings = false,
---      operators = false,
---      comments = true,
---   },
---   strikethrough = true,
---   invert_selection = false,
---   invert_signs = false,
---   invert_tabline = false,
---   invert_intend_guides = false,
---   inverse = true, -- invert background for search, diffs, statuslines and errors
---   contrast = "", -- can be "hard", "soft" or empty string
---   palette_overrides = {},
---   overrides = {},
---   dim_inactive = false,
---   transparent_mode = true,
--- })
+
+-- Setup lazy
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("plugins")
+
+-- Colorscheme
 
 require('kanagawa').setup({
     compile = false,             -- enable compiling the colorscheme
