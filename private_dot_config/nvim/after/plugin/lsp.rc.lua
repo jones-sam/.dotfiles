@@ -312,7 +312,8 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'path' },
-    { name = 'vsnip' },
+    -- { name = 'vsnip' },
+    { name = 'neorg' },
     { name = 'buffer',  keyword_length = 5 },
   },
   formatting = {
@@ -322,6 +323,7 @@ cmp.setup({
         buffer = "[buf]",
         nvim_lsp = "[LSP]",
         path = "[path]",
+        neorg = "[neorg]",
         vsnip = "[snip]",
       },
     },

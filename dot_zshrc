@@ -16,6 +16,7 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # Allow for basically infinite history
 export HISTFILESIZE=1000000000

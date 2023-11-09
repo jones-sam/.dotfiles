@@ -12,8 +12,9 @@ call plug#begin("~/.vim/plugged")
 Plug 'rafamadriz/friendly-snippets'
 Plug 'hrsh7th/vim-vsnip'
 
-" File tree
+" File management
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'stevearc/oil.nvim'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -53,6 +54,7 @@ Plug 'sbdchd/neoformat'
 " Theme
 " Plug 'gruvbox-community/gruvbox'
 Plug 'ellisonleao/gruvbox.nvim'
+Plug 'rebelot/kanagawa.nvim'
 
 " Git
 Plug 'kdheepak/lazygit.nvim'
@@ -94,6 +96,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'prisma/vim-prisma'
+Plug 'nvim-neorg/neorg'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'

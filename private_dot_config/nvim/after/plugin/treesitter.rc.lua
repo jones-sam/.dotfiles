@@ -54,7 +54,8 @@ require('nvim-treesitter.configs').setup {
     "prisma",
     "query",
     "php",
-    "svelte"
+    "svelte",
+    "norg"
   },
   context_commentstring = {
     enable = true,
