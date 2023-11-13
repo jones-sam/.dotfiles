@@ -11,6 +11,7 @@ require('neorg').setup {
         workspaces = {
           notes = "~/notes",
         },
+        default_workspace = "notes"
       },
     },
     ["core.completion"] = {

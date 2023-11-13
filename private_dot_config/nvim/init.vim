@@ -46,7 +46,7 @@ set wildignore+=**/.git/*
 
 let g:startify_skiplist = ["/private/tmp/kitty_scrollback_buffer"]
 
-let g:polyglot_disabled = ['norg', 'ftdetect']
+" let g:polyglot_disabled = ['norg', 'ftdetect']
 
 let mapleader = " "
 let maplocalleader = ","

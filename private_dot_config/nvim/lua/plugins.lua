@@ -43,7 +43,12 @@ return {
   "numToStr/Comment.nvim",
   "tpope/vim-rhubarb",
   "tpope/vim-eunuch",
-  "psliwka/vim-smoothie",
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup({})
+    end
+  },
   "mbbill/undotree",
   "NvChad/nvim-colorizer.lua",
   "aserowy/tmux.nvim",
