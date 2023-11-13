@@ -30,8 +30,6 @@ require('nvim-treesitter.configs').setup {
   },
   indent = {
     enable = true,
-    -- indentation isn't great with js, especially react, using vim-polyglot
-    -- disable = { "tsx", "typescript", "jsx", "javascript", },
   },
   ensure_installed = {
     "lua",
@@ -72,9 +70,6 @@ require('nvim-treesitter.configs').setup {
   autotag = {
     enable = true,
     enable_close_on_slash = false,
-  },
-  autopairs = {
-    enable = true
   },
   textobjects = {
     move = {

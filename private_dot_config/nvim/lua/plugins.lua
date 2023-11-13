@@ -46,7 +46,9 @@ return {
   {
     "karb94/neoscroll.nvim",
     config = function()
-      require('neoscroll').setup({})
+      require('neoscroll').setup({
+        easing_function = "sine",
+      })
     end
   },
   "mbbill/undotree",
@@ -63,7 +65,6 @@ return {
   "JoosepAlviste/nvim-ts-context-commentstring",
   "windwp/nvim-ts-autotag",
   "nvim-treesitter/playground",
-  -- { "sheerun/vim-polyglot",  lazy = false },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -74,10 +75,9 @@ return {
     ft = { "markdown" },
   },
   "nvim-lualine/lualine.nvim",
-  "windwp/nvim-autopairs",
   {
-    "junegunn/goyo.vim",
-    cmd = { "Goyo" },
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
   },
   "dbeniamine/cheat.sh-vim",
   "AndrewRadev/splitjoin.vim",
@@ -88,5 +88,10 @@ return {
     build = ":Neorg sync-parsers",
     cmd = { "Neorg" }
   },
-  "kyazdani42/nvim-web-devicons",
+  {
+    "folke/zen-mode.nvim",
+    cmd = { "ZenMode" },
+    opts = {}
+  },
+  "kyazdani42/nvim-web-devicons"
 }
