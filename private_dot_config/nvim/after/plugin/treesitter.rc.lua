@@ -24,6 +24,10 @@ end
 --   return n, p
 -- end)()
 
+require('ts_context_commentstring').setup {
+  enable_autocmd = false,
+}
+
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
@@ -53,10 +57,6 @@ require('nvim-treesitter.configs').setup {
     "query",
     "php",
     "svelte",
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
   },
   incremental_selection = {
     enable = true,
@@ -94,7 +94,6 @@ require('nvim-treesitter.configs').setup {
         -- ["[]"] = "@class.outer",
       },
     },
-
     select = {
       enable = true,
       keymaps = {

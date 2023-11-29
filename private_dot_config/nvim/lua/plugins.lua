@@ -16,18 +16,18 @@ return {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-vsnip",
+  -- "hrsh7th/cmp-vsnip",
   "onsails/lspkind.nvim",
   "glepnir/lspsaga.nvim",
-  "simrat39/inlay-hints.nvim",
   "folke/trouble.nvim",
-  {
-    "j-hui/fidget.nvim",
-    tag = "legacy",
-    event = "LspAttach",
-  },
+  "j-hui/fidget.nvim",
   "zbirenbaum/copilot.lua",
   "ray-x/lsp_signature.nvim",
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
   "leoluz/nvim-dap-go",
@@ -54,7 +54,7 @@ return {
   "mbbill/undotree",
   "NvChad/nvim-colorizer.lua",
   "aserowy/tmux.nvim",
-  "ggandor/lightspeed.nvim",
+  -- "ggandor/lightspeed.nvim",
   "ThePrimeagen/harpoon",
   "monaqa/dial.nvim",
   "tommcdo/vim-exchange",
@@ -86,12 +86,27 @@ return {
     "nvim-neorg/neorg",
     ft = { "norg" },
     build = ":Neorg sync-parsers",
-    cmd = { "Neorg" }
+    cmd = { "Neorg" },
+    dependencies = {
+      { "nvim-neorg/neorg-telescope" },
+    },
   },
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },
     opts = {}
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      { "s",         mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",         mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      -- { "r",         mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      -- { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      -- { "<leader>s", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    },
   },
   "kyazdani42/nvim-web-devicons"
 }
