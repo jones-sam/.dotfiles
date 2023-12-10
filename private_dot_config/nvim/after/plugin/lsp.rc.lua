@@ -4,7 +4,10 @@ require("fidget").setup({})
 local lsp_fixcurrent = require("lsp_fixcurrent")
 
 local lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- not sure why, but having this won't let a selection be made from the completion menu
+-- seems to work fine without it
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
@@ -72,8 +75,12 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+require("typescript-tools").setup {
+  -- capabilities = capabilities,
+  on_attach = on_attach
+}
+
 lsp['eslint'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
@@ -82,38 +89,34 @@ lsp['tailwindcss'].setup {
   -- cmd = { "tailwindcss-language-server", "--stdio" },
   filetypes = { "typescriptreact", "typescript", "javascript", "javascriptreact", "html", "css" },
   -- root_dir = lsp.util.root_pattern('tailwind.config.cjs', 'tailwind.config.js', 'tailwind.config.ts','postcss.config.cjs', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git'),
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['gopls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
-  flags = lsp_flags,
-  settings = {
-    gopls = {
-      hints = {
-        assignVariableTypes = true,
-        compositeLiteralFields = true,
-        compositeLiteralTypes = true,
-        constantValues = true,
-        functionTypeParameters = true,
-        parameterNames = true,
-        rangeVariableTypes = true,
-      },
-    },
-  },
+  -- flags = lsp_flags,
+  -- settings = {
+  --   gopls = {
+  --     hints = {
+  --       assignVariableTypes = true,
+  --       compositeLiteralFields = true,
+  --       compositeLiteralTypes = true,
+  --       constantValues = true,
+  --       functionTypeParameters = true,
+  --       parameterNames = true,
+  --       rangeVariableTypes = true,
+  --     },
+  --   },
+  -- },
 }
 
 lsp['intelephense'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['lua_ls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
@@ -126,49 +129,41 @@ lsp['lua_ls'].setup {
 }
 
 lsp['bashls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['pylsp'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['cssls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['elixirls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['prismals'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['svelte'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['ruby_ls'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['solargraph'].setup {
-  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }

@@ -15,7 +15,7 @@ set nohlsearch
 set hidden
 set nowrap
 set noswapfile
-set undodir=~/.vim/undodir
+set undodir=~/.local/share/nvim/undodir/
 set undofile
 set scrolloff=8
 set encoding=UTF-8
@@ -28,8 +28,6 @@ set lazyredraw " Faster macros
 set noshowmode
 set splitbelow
 set splitright
-
-set conceallevel=2
 
 set nobackup
 set nowritebackup
@@ -124,3 +122,10 @@ augroup two_space_langs
     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
     " autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
 augroup END
+
+augroup conceal
+    autocmd!
+    autocmd FileType neorg setlocal set conceallevel=2
+augroup END
+
+
