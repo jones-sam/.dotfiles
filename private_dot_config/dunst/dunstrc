@@ -2,9 +2,7 @@
     follow = mouse
     indicate_hidden = yes
 
-    offset = 10x10
-
-    notification_height = 0
+    offset = 8x8
 
     separator_height = 2
 
@@ -38,7 +36,7 @@
     title = Dunst
     class = Dunst
 
-    corner_radius = 10
+    corner_radius = 8
     timeout = 5
 
 [urgency_low]
