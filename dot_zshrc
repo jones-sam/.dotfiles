@@ -136,6 +136,7 @@ alias ZZ="exit"
 alias ZQ="exit"
 alias myip="curl ifconfig.co"
 alias fullip="curl ifconfig.co/json | jq"
+alias ls="lsd"
 
 export EDITOR=nvim
 export VISUAL=nvim
