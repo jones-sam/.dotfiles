@@ -66,8 +66,8 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
-			platerctl pause
-			amixer set Master mute
+			playerctl pause
+			# amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			hyprctl dispatch exit
@@ -87,7 +87,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		~/.config/hypr/scripts/screenlock.sh
+		swaylock
         ;;
     $suspend)
 		run_cmd --suspend
