@@ -1,7 +1,7 @@
 return {
   "rebelot/kanagawa.nvim",
-  -- "rafamadriz/friendly-snippets",
-  -- "hrsh7th/vim-vsnip",
+  "rafamadriz/friendly-snippets",
+  "hrsh7th/vim-vsnip",
   "kyazdani42/nvim-tree.lua",
   "stevearc/oil.nvim",
   "nvim-lua/popup.nvim",
@@ -11,11 +11,15 @@ return {
   "nvim-telescope/telescope-file-browser.nvim",
   "neovim/nvim-lspconfig",
   "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
+  {
+    "hrsh7th/nvim-cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
+  },
   -- "hrsh7th/cmp-vsnip",
   "onsails/lspkind.nvim",
   "glepnir/lspsaga.nvim",
@@ -63,6 +67,7 @@ return {
   "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
   "JoosepAlviste/nvim-ts-context-commentstring",
+  "RRethy/nvim-treesitter-endwise",
   "windwp/nvim-ts-autotag",
   "nvim-treesitter/playground",
   {
@@ -97,16 +102,16 @@ return {
     opts = {}
   },
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {},
-    keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      -- { "r",         mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-      -- { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      -- { "<leader>s", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
-    },
+    -- "folke/flash.nvim",
+    -- event = "VeryLazy",
+    -- opts = {},
+    -- keys = {
+    --   { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
+    --   { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    --   -- { "r",         mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+    --   -- { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    --   -- { "<leader>s", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    -- },
   },
   {
     "mikesmithgh/kitty-scrollback.nvim",
@@ -124,14 +129,14 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("gx").setup {
-        open_browser_app = "xdg-open",     -- specify your browser app; default for macOS is "open", Linux "xdg-open" and Windows "powershell.exe"
+        open_browser_app = "xdg-open", -- specify your browser app; default for macOS is "open", Linux "xdg-open" and Windows "powershell.exe"
         -- open_browser_args = {}, -- specify any arguments, such as --background for macOS' "open".
         handlers = {
-          plugin = true,                      -- open plugin links in lua (e.g. packer, lazy, ..)
-          github = true,                      -- open github issues
+          plugin = true,       -- open plugin links in lua (e.g. packer, lazy, ..)
+          github = true,       -- open github issues
           -- brewfile = true,                    -- open Homebrew formulaes and casks
-          package_json = true,                -- open dependencies from package.json
-          search = true,                      -- search the web/selection on the web if nothing else is found
+          package_json = true, -- open dependencies from package.json
+          search = true,       -- search the web/selection on the web if nothing else is found
         },
         handler_options = {
           -- search_engine = "google",                           -- you can select between google, bing, duckduckgo, and ecosia
@@ -140,5 +145,33 @@ return {
       }
     end,
   },
+  -- {
+  --   "elixir-tools/elixir-tools.nvim",
+  --   version = "*",
+  --   -- event = { "BufReadPre", "BufNewFile" },
+  --   config = function()
+  --     local elixir = require("elixir")
+  --     local elixirls = require("elixir.elixirls")
+  --
+  --     elixir.setup {
+  --       nextls = { enable = true },
+  --       credo = {},
+  --       elixirls = {
+  --         enable = true,
+  --         settings = elixirls.settings {
+  --           dialyzerEnabled = false,
+  --           enableTestLenses = false,
+  --         },
+  --         on_attach = function(client, bufnr)
+  --           vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
+  --           vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
+  --           vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", { buffer = true, noremap = true })
+  --         end,
+  --     }
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  -- },
   "kyazdani42/nvim-web-devicons"
 }

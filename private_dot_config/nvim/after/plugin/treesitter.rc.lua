@@ -71,6 +71,9 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     enable_close_on_slash = false,
   },
+  endwise = {
+    enable = true,
+  },
   textobjects = {
     move = {
       enable = true,

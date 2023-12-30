@@ -1,13 +1,13 @@
+require("fidget").setup()
+
 require("mason").setup()
-require("fidget").setup({})
+require("mason-lspconfig").setup()
 
 local lsp_fixcurrent = require("lsp_fixcurrent")
 
 local lsp = require('lspconfig')
 
--- not sure why, but having this won't let a selection be made from the completion menu
--- seems to work fine without it
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
@@ -76,16 +76,18 @@ local lsp_flags = {
 }
 
 require("typescript-tools").setup {
-  -- capabilities = capabilities,
+  capabilities = capabilities,
   on_attach = on_attach
 }
 
 lsp['eslint'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['tailwindcss'].setup {
+  capabilities = capabilities,
   -- cmd = { "tailwindcss-language-server", "--stdio" },
   filetypes = { "typescriptreact", "typescript", "javascript", "javascriptreact", "html", "css" },
   -- root_dir = lsp.util.root_pattern('tailwind.config.cjs', 'tailwind.config.js', 'tailwind.config.ts','postcss.config.cjs', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git'),
@@ -94,8 +96,9 @@ lsp['tailwindcss'].setup {
 }
 
 lsp['gopls'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
-  -- flags = lsp_flags,
+  flags = lsp_flags,
   -- settings = {
   --   gopls = {
   --     hints = {
@@ -112,11 +115,13 @@ lsp['gopls'].setup {
 }
 
 lsp['intelephense'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['lua_ls'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
@@ -129,41 +134,55 @@ lsp['lua_ls'].setup {
 }
 
 lsp['bashls'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['pylsp'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['cssls'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['elixirls'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
+-- lsp['nextls'].setup {
+-- capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+-- }
+
 lsp['prismals'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['svelte'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['ruby_ls'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
 
 lsp['solargraph'].setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
 }
@@ -179,7 +198,8 @@ local cmp = require("cmp")
 cmp.setup({
   snippet = {
     expand = function(args)
-      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      -- Snippet engine is required
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
       -- luasnip.lsp_expand(args.body) -- For `luasnip` users.
       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
@@ -211,7 +231,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
   experimental = {
     ghost_text = false,
@@ -219,7 +239,7 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'path' },
-    -- { name = 'vsnip' },
+    { name = 'vsnip' },
     { name = 'neorg' },
     { name = 'buffer',  keyword_length = 5 },
   },
@@ -235,7 +255,7 @@ cmp.setup({
       },
     },
   },
-  preselect = cmp.PreselectMode.None,
+  -- preselect = cmp.PreselectMode.None,
   sorting = {
     comparators = {
       cmp.config.compare.offset,

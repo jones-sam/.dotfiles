@@ -120,6 +120,7 @@ augroup two_space_langs
     autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
     autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
+    autocmd FileType elixir setlocal shiftwidth=2 tabstop=2
     " autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
 augroup END
 
