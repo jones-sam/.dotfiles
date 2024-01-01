@@ -126,7 +126,7 @@ augroup END
 
 augroup conceal
     autocmd!
-    autocmd FileType neorg setlocal set conceallevel=2
+    autocmd FileType norg setlocal conceallevel=2
 augroup END
 
 
