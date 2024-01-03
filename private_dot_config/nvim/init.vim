@@ -124,9 +124,9 @@ augroup two_space_langs
     " autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
 augroup END
 
-augroup conceal
+augroup neorg
     autocmd!
-    autocmd FileType norg setlocal conceallevel=2
+    autocmd FileType norg setlocal conceallevel=2 wrap linebreak spell
 augroup END
 
 

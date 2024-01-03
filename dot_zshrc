@@ -175,3 +175,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export XDG_SCREENSHOTS_DIR="~/Screenshots/"
+
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
+# pnpm completion
+source /usr/share/zsh/plugins/pnpm-shell-completion/pnpm-shell-completion.zsh

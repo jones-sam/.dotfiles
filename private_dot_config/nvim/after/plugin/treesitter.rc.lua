@@ -28,6 +28,8 @@ require('ts_context_commentstring').setup {
   enable_autocmd = false,
 }
 
+require('nvim-ts-autotag').setup()
+
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
@@ -67,10 +69,10 @@ require('nvim-treesitter.configs').setup {
       scope_incremental = "<M-q>",  -- increment to the upper scope (as defined in locals.scm)
     },
   },
-  autotag = {
-    enable = true,
-    enable_close_on_slash = false,
-  },
+  -- autotag = {
+  --   enable = true,
+  --   enable_close_on_slash = false,
+  -- },
   endwise = {
     enable = true,
   },

@@ -20,5 +20,8 @@ require('neorg').setup {
       }
     },
     ["core.integrations.telescope"] = {},
+    ["core.export"] = {},
+    ["core.ui.calendar"] = {},
+    ["core.summary"] = {}
   },
 }
