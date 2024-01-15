@@ -50,7 +50,7 @@
         "interval" : 60,
         "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
         "return-type" : "json",
-        "on-click": "kitty ~/.config/waybar/scripts/open-wttr.sh"
+        "on-click": "xdg-open https://windy.com"
     },
     "custom/ddcutil": {
         "format": "{percentage}% {icon}",
