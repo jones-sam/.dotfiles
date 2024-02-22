@@ -56,9 +56,18 @@ WEATHER_CODES = {
 }
 
 data = {}
+is_outdated = False
 
+try:
+    weather = requests.get("https://wttr.in/?format=j1").json()
+    with open('/tmp/weather.json', 'w') as file:
+        file.write(json.dumps(weather))
+    is_outdated = False
+except:
+    with open('/tmp/weather.json', 'r') as file:
+        weather = json.load(file)
+    is_outdated = True
 
-weather = requests.get("https://wttr.in/?format=j1").json()
 
 
 def format_time(time):
@@ -92,9 +101,13 @@ extrachar = ''
 if tempint > 0 and tempint < 10:
     extrachar = '+'
 
+outdated_char = ""
+
+if is_outdated:
+    outdated_char += " ⌛"
 
 data['text'] = ' '+WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
-    " "+extrachar+weather['current_condition'][0]['FeelsLikeC']+"°"
+    " "+extrachar+weather['current_condition'][0]['FeelsLikeC']+"°"+outdated_char
 
 data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
 data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
