@@ -19,5 +19,8 @@ nmap <leader>Y "+Y
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
 
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 nnoremap <leader>cf <CMD>lua require('cmp').setup.buffer { enabled = false }<CR>
 nnoremap <leader>ct <CMD>lua require('cmp').setup.buffer { enabled = true }<CR>

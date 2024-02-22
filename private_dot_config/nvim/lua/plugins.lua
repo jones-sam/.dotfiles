@@ -39,6 +39,14 @@ return {
   "nvim-telescope/telescope-dap.nvim",
   "sbdchd/neoformat",
   "kdheepak/lazygit.nvim",
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+    },
+    config = true
+  },
   "tpope/vim-fugitive",
   "lewis6991/gitsigns.nvim",
   "tpope/vim-sleuth",
