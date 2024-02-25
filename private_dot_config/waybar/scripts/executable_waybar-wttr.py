@@ -69,7 +69,6 @@ except:
     is_outdated = True
 
 
-
 def format_time(time):
     return time.replace("00", "").zfill(2)
 
@@ -102,14 +101,16 @@ if tempint > 0 and tempint < 10:
     extrachar = '+'
 
 outdated_char = ""
+data['tooltip'] = ""
 
 if is_outdated:
     outdated_char += " ⌛"
+    data['tooltip'] += f"Weather last updated: {weather['current_condition'][0]['localObsDateTime']}\n"
 
 data['text'] = ' '+WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
     " "+extrachar+weather['current_condition'][0]['FeelsLikeC']+"°"+outdated_char
 
-data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
+data['tooltip'] += f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
 data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
 data['tooltip'] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
 data['tooltip'] += f"Humidity: {weather['current_condition'][0]['humidity']}%\n"
