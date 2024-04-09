@@ -1,5 +1,6 @@
 return {
-  "rebelot/kanagawa.nvim",
+  -- "rebelot/kanagawa.nvim",
+  "EdenEast/nightfox.nvim",
   "rafamadriz/friendly-snippets",
   "hrsh7th/vim-vsnip",
   "kyazdani42/nvim-tree.lua",
@@ -32,15 +33,16 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
   },
-  "mfussenegger/nvim-dap",
-  "rcarriga/nvim-dap-ui",
-  "leoluz/nvim-dap-go",
-  "theHamsta/nvim-dap-virtual-text",
-  "nvim-telescope/telescope-dap.nvim",
+  -- "mfussenegger/nvim-dap",
+  -- "rcarriga/nvim-dap-ui",
+  -- "leoluz/nvim-dap-go",
+  -- "theHamsta/nvim-dap-virtual-text",
+  -- "nvim-telescope/telescope-dap.nvim",
   "sbdchd/neoformat",
   "kdheepak/lazygit.nvim",
   {
     "NeogitOrg/neogit",
+    branch = "nightly",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
@@ -70,7 +72,6 @@ return {
   "ThePrimeagen/harpoon",
   "monaqa/dial.nvim",
   "tommcdo/vim-exchange",
-  "mhinz/vim-startify",
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
@@ -95,15 +96,15 @@ return {
   "dbeniamine/cheat.sh-vim",
   "AndrewRadev/splitjoin.vim",
   "prisma/vim-prisma",
-  {
-    "nvim-neorg/neorg",
-    ft = { "norg" },
-    build = ":Neorg sync-parsers",
-    cmd = { "Neorg" },
-    dependencies = {
-      { "nvim-neorg/neorg-telescope" },
-    },
-  },
+  -- {
+  --   "nvim-neorg/neorg",
+  --   ft = { "norg" },
+  --   build = ":Neorg sync-parsers",
+  --   cmd = { "Neorg" },
+  --   dependencies = {
+  --     { "nvim-neorg/neorg-telescope" },
+  --   },
+  -- },
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },
