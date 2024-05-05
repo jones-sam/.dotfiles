@@ -44,7 +44,7 @@ return {
     "NeogitOrg/neogit",
     branch = "nightly",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
+      "nvim-lua/plenary.nvim",  -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
     },
     config = true
@@ -136,6 +136,11 @@ return {
     "chrishrb/gx.nvim",
     event = { "BufEnter" },
     dependencies = { "nvim-lua/plenary.nvim" },
+    keys = { { "gx", "<cmd>Browse<cr>", mode = { "n", "x" } } },
+    cmd = { "Browse" },
+    init = function()
+      vim.g.netrw_nogx = 1 -- disable netrw gx
+    end,
     config = function()
       require("gx").setup {
         open_browser_app = "xdg-open", -- specify your browser app; default for macOS is "open", Linux "xdg-open" and Windows "powershell.exe"

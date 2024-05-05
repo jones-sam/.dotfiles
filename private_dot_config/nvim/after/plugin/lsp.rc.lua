@@ -175,7 +175,7 @@ lsp['svelte'].setup {
   flags = lsp_flags,
 }
 
-lsp['ruby_ls'].setup {
+lsp['ruby_lsp'].setup {
   capabilities = capabilities,
   on_attach = on_attach,
   flags = lsp_flags,
