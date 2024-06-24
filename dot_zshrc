@@ -137,6 +137,7 @@ alias ZQ="exit"
 alias myip="curl ifconfig.co"
 alias fullip="curl ifconfig.co/json | jq"
 alias ls="lsd"
+alias s="kitten ssh"
 
 export EDITOR=nvim
 export VISUAL=nvim

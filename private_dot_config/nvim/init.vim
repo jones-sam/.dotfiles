@@ -134,5 +134,3 @@ augroup neorg
     autocmd!
     autocmd FileType norg setlocal conceallevel=2 wrap linebreak spell
 augroup END
-
-
