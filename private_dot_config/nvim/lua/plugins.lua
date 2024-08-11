@@ -27,6 +27,18 @@ return {
   -- "folke/trouble.nvim",
   "j-hui/fidget.nvim",
   "zbirenbaum/copilot.lua",
+  {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({
+        keymaps = {
+          accept_suggestion = "<C-CR>",
+          clear_suggestion = "<C-]",
+          accept_word = "<M-CR>",
+        }
+      })
+    end,
+  },
   "ray-x/lsp_signature.nvim",
   {
     "pmizio/typescript-tools.nvim",
@@ -105,6 +117,15 @@ return {
   --     { "nvim-neorg/neorg-telescope" },
   --   },
   -- },
+  {
+    'renerocksai/telekasten.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require("telekasten").setup({
+        home = vim.fn.expand("~/zettelkasten"), -- Put the name of your notes directory here
+      })
+    end,
+  },
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },

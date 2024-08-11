@@ -93,7 +93,6 @@ plugins=(
     copybuffer
     dirhistory
     docker
-    ripgrep
     nvm
     gh
     golang
