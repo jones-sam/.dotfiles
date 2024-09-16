@@ -1,6 +1,5 @@
 return {
-  -- "rebelot/kanagawa.nvim",
-  "EdenEast/nightfox.nvim",
+  "ellisonleao/gruvbox.nvim",
   "rafamadriz/friendly-snippets",
   "hrsh7th/vim-vsnip",
   "kyazdani42/nvim-tree.lua",
@@ -119,7 +118,10 @@ return {
   -- },
   {
     'renerocksai/telekasten.nvim',
-    dependencies = { 'nvim-telescope/telescope.nvim' },
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-telekasten/calendar-vim',
+    },
     config = function()
       require("telekasten").setup({
         home = vim.fn.expand("~/zettelkasten"), -- Put the name of your notes directory here
@@ -179,6 +181,23 @@ return {
         },
       }
     end,
+  },
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
+
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      lang = "typescript",
+    },
   },
   "kyazdani42/nvim-web-devicons"
 }
