@@ -104,7 +104,7 @@ colorscheme gruvbox
 " highlight Normal ctermbg=NONE guibg=NONE
 " highlight NormalFloat ctermbg=NONE guibg=NONE
 " highlight SignColumn ctermbg=NONE guibg=NONE
-" highlight TreesitterContext ctermbg=NONE guibg=#504945
+highlight TreesitterContext ctermbg=NONE guibg=#504945
 
 " Short highlight on yanked text
 augroup highlight_yank
@@ -120,7 +120,7 @@ augroup two_space_langs
     autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
     autocmd FileType elixir setlocal shiftwidth=2 tabstop=2
-    " autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
+    autocmd FileType svelte setlocal shiftwidth=2 tabstop=2
 augroup END
 
 augroup neorg
