@@ -28,7 +28,7 @@ set lazyredraw " Faster macros
 set noshowmode
 set splitbelow
 set splitright
-
+ 
 set nobackup
 set nowritebackup
 
@@ -46,10 +46,6 @@ let mapleader = " "
 let maplocalleader = ","
 
 runtime ./maps.vim
-
-set termguicolors
-set background=dark
-syntax enable
 
 lua << EOF
 
@@ -95,16 +91,17 @@ require("gruvbox").setup({
         palette_overrides = {},
         overrides = {},
         dim_inactive = false,
-        transparent_mode = true,
+        transparent_mode = false,
 })
 EOF
 
+set background=dark
 colorscheme gruvbox
 
 " highlight Normal ctermbg=NONE guibg=NONE
 " highlight NormalFloat ctermbg=NONE guibg=NONE
 " highlight SignColumn ctermbg=NONE guibg=NONE
-highlight TreesitterContext ctermbg=NONE guibg=#504945
+" highlight TreesitterContext ctermbg=NONE guibg=#504945
 
 " Short highlight on yanked text
 augroup highlight_yank

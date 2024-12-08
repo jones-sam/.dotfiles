@@ -27,6 +27,7 @@ return {
 				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 				svelte = { "prettierd", "prettier", stop_after_first = true },
+				go = { "gofmt", "goimports" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",
@@ -65,17 +66,82 @@ return {
 	-- "folke/trouble.nvim",
 	"j-hui/fidget.nvim",
 	"zbirenbaum/copilot.lua",
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({
+	-- 			keymaps = {
+	-- 				accept_suggestion = "<C-CR>",
+	-- 				clear_suggestion = "<C-]>",
+	-- 				accept_word = "<M-CR>",
+	-- 			},
+	-- 			disable_inline_completion = true,
+	-- 		})
+	-- 	end,
+	-- },
 	{
-		"supermaven-inc/supermaven-nvim",
-		config = function()
-			require("supermaven-nvim").setup({
-				keymaps = {
-					accept_suggestion = "<C-CR>",
-					clear_suggestion = "<C-]>",
-					accept_word = "<M-CR>",
+		"echasnovski/mini.diff",
+		-- config = function()
+		-- 	local diff = require("mini.diff")
+		-- 	diff.setup({
+		-- 		-- Disabled by default
+		-- 		source = diff.gen_source.none(),
+		-- 	})
+		-- end,
+	},
+	-- {
+	-- 	"olimorris/codecompanion.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		-- The following are optional:
+	-- 		{ "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown", "codecompanion" } },
+	-- 	},
+	-- 	config = true,
+	-- },
+	{
+		"yetone/avante.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		version = false, -- set this if you want to always pull the latest change
+		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+		build = "make",
+		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+		dependencies = {
+			"stevearc/dressing.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			--- The below dependencies are optional,
+			"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			{
+				-- support for image pasting
+				"HakonHarnes/img-clip.nvim",
+				event = "VeryLazy",
+				opts = {
+					-- recommended settings
+					default = {
+						embed_image_as_base64 = false,
+						prompt_for_file_name = false,
+						drag_and_drop = {
+							insert_mode = true,
+						},
+						-- required for Windows users
+						use_absolute_path = true,
+					},
 				},
-			})
-		end,
+			},
+			{
+				-- Make sure to set this up properly if you have lazy=true
+				"MeanderingProgrammer/render-markdown.nvim",
+				opts = {
+					file_types = { "markdown", "Avante" },
+				},
+				ft = { "markdown", "Avante" },
+			},
+		},
 	},
 	"ray-x/lsp_signature.nvim",
 	{
@@ -118,7 +184,11 @@ return {
 	"NvChad/nvim-colorizer.lua",
 	"aserowy/tmux.nvim",
 	-- "ggandor/lightspeed.nvim",
-	"ThePrimeagen/harpoon",
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	"monaqa/dial.nvim",
 	"tommcdo/vim-exchange",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -171,32 +241,32 @@ return {
 		cmd = { "ZenMode" },
 		opts = {},
 	},
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{
-				"s",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").jump()
-				end,
-				desc = "Flash",
-			},
-			{
-				"S",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").treesitter()
-				end,
-				desc = "Flash Treesitter",
-			},
-			-- { "r",         mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-			-- { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-			-- { "<leader>s", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
-		},
-	},
+	-- {
+	-- 	"folke/flash.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- 	keys = {
+	-- 		{
+	-- 			"s",
+	-- 			mode = { "n", "x", "o" },
+	-- 			function()
+	-- 				require("flash").jump()
+	-- 			end,
+	-- 			desc = "Flash",
+	-- 		},
+	-- 		{
+	-- 			"S",
+	-- 			mode = { "n", "x", "o" },
+	-- 			function()
+	-- 				require("flash").treesitter()
+	-- 			end,
+	-- 			desc = "Flash Treesitter",
+	-- 		},
+	-- 		-- { "r",         mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+	-- 		-- { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+	-- 		-- { "<leader>s", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+	-- 	},
+	-- },
 	{
 		"mikesmithgh/kitty-scrollback.nvim",
 		enabled = true,
