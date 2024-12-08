@@ -43,11 +43,35 @@
     "all-outputs": true,
     "warp-on-scroll": false,
     "active-only": false,
-    "format": "{name}",
+    "format": "{name}: {windows}",
+    // "format-window-separator": " ",
+    "window-rewrite-default": "",
     "format-icons": {
       "urgent": "",
       "active": "",
       "default": "󰧞"
+    },
+    "window-rewrite": {
+      "music": "",
+      "armcord": "",
+      "class<firefox>": "", 
+      "class<firefox> title<.*youtube.*>": "", 
+      "class<firefox> title<.*SearXNG.*>": "",
+      "class<firefox> title<.*gmail.*>": "",
+      "kitty": "", 
+      "class<kitty> title<qalc>": "",
+      "thunar": "",
+      "calibre": "",
+      "E-book viewer": "",
+      "NVIM": "",
+      "vim": "",
+      "mpv": "",
+      "vlc": "",
+      "chrome": "",
+      "chromium": "",
+      "bluetooth": "󰂯",
+      "Visual Studio Code": "",
+      "zeditor": "Z"
     }
   },
   "hyprland/window": {
