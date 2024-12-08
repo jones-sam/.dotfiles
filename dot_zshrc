@@ -195,3 +195,8 @@ esac
 # pnpm end
 
 export GOPATH=$HOME/go
+
+# Created by `pipx` on 2024-12-03 21:11:30
+export PATH="$PATH:/home/sam/.local/bin"
+
+eval "$(gh copilot alias -- zsh)"
