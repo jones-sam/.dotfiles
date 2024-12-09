@@ -79,16 +79,6 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-	{
-		"echasnovski/mini.diff",
-		-- config = function()
-		-- 	local diff = require("mini.diff")
-		-- 	diff.setup({
-		-- 		-- Disabled by default
-		-- 		source = diff.gen_source.none(),
-		-- 	})
-		-- end,
-	},
 	-- {
 	-- 	"olimorris/codecompanion.nvim",
 	-- 	dependencies = {
@@ -182,8 +172,6 @@ return {
 	-- },
 	"mbbill/undotree",
 	"NvChad/nvim-colorizer.lua",
-	"aserowy/tmux.nvim",
-	-- "ggandor/lightspeed.nvim",
 	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
