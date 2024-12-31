@@ -26,6 +26,7 @@ return {
 				typescript = { "prettierd", "prettier", stop_after_first = true },
 				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+				json = { "prettierd", "prettier", stop_after_first = true },
 				svelte = { "prettierd", "prettier", stop_after_first = true },
 				go = { "gofmt", "goimports" },
 			},
@@ -91,13 +92,13 @@ return {
 	-- 	config = true,
 	-- },
 	{
+		-- dir = "~/code/avante.nvim",
 		"yetone/avante.nvim",
 		event = "VeryLazy",
 		lazy = false,
 		version = false, -- set this if you want to always pull the latest change
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",
-		-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 		dependencies = {
 			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
@@ -163,12 +164,17 @@ return {
 	"tpope/vim-rhubarb",
 	"tpope/vim-eunuch",
 	-- {
-	--   "karb94/neoscroll.nvim",
-	--   config = function()
-	--     require('neoscroll').setup({
-	--       easing_function = "sine",
-	--     })
-	--   end
+	-- 	"karb94/neoscroll.nvim",
+	-- 	config = function()
+	-- 		require("neoscroll").setup({
+	-- 			easing_function = "sine",
+	-- 			-- respect_scrolloff = true,
+	-- 			duration_multiplier = 0.25,
+	-- 			-- post_hook = function()
+	-- 			-- 	vim.cmd("normal! zz")
+	-- 			-- end,
+	-- 		})
+	-- 	end,
 	-- },
 	"mbbill/undotree",
 	"NvChad/nvim-colorizer.lua",
