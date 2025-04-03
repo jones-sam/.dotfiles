@@ -57,9 +57,7 @@
       "class<firefox>": "", 
       "class<.*Zen Browser.*>": "󰖟",
       "class<.*Brave.*>": "󰖟",
-      "class<Zen Browser> title<.*youtube.*>": "", 
-      "class<Brave> title<.*youtube.*>": "", 
-      "class<firefox> title<.*youtube.*>": "", 
+      "class<.*Brave.*> title<.*youtube.*>": "", 
       "title<.*SearXNG.*>": "",
       "title<.*gmail.*>": "",
       "kitty": "", 
@@ -75,7 +73,8 @@
       "chromium": "",
       "bluetooth": "󰂯",
       "Visual Studio Code": "",
-      "zeditor": "Z"
+      "zeditor": "Z",
+      "spotify": ""
     }
   },
   "hyprland/window": {

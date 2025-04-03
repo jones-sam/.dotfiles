@@ -200,3 +200,4 @@ export GOPATH=$HOME/go
 export PATH="$PATH:/home/sam/.local/bin"
 
 eval "$(gh copilot alias -- zsh)"
+eval "$(_AUTO_CPUFREQ_COMPLETE=zsh_source auto-cpufreq)"
