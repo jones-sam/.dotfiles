@@ -140,6 +140,7 @@ alias s="kitten ssh"
 
 export EDITOR=nvim
 export VISUAL=nvim
+export LAUNCH_EDITOR=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -201,3 +202,9 @@ export PATH="$PATH:/home/sam/.local/bin"
 
 eval "$(gh copilot alias -- zsh)"
 eval "$(_AUTO_CPUFREQ_COMPLETE=zsh_source auto-cpufreq)"
+
+export ENCORE_INSTALL="/home/sam/.encore"
+export PATH="$ENCORE_INSTALL/bin:$PATH"
+
+# for avante search
+export SEARXNG_API_URL=localhost                    
