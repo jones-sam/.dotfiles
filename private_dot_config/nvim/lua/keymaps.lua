@@ -40,3 +40,14 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+
+-- Yank error
+vim.keymap.set("n", "<leader>ye", function()
+	local msg = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })[1]
+	if msg then
+		vim.fn.setreg("+", msg.message) -- Copy to system clipboard
+		print("Error yanked to clipboard!")
+	else
+		print("No diagnostic on this line.")
+	end
+end)
