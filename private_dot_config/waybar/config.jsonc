@@ -54,6 +54,7 @@
     "window-rewrite": {
       "music": "",
       "armcord": "",
+      "discord": "",
       "class<firefox>": "", 
       "class<.*Zen Browser.*>": "󰖟",
       "class<.*Brave.*>": "󰖟",
@@ -74,7 +75,9 @@
       "bluetooth": "󰂯",
       "Visual Studio Code": "",
       "zeditor": "Z",
-      "spotify": ""
+      "spotify": "",
+      "obsidian": "",
+      "steam": ""
     }
   },
   "hyprland/window": {
